@@ -56,7 +56,7 @@ const Navbar = () => {
                         <img
                         src={logoText}
                         alt="Dev Stack"
-                        className="h-9 w-auto object-contain"
+                        className="h-7 lg:h-9 w-auto object-contain"
                         />
                     </a>
                 </div>
@@ -66,7 +66,7 @@ const Navbar = () => {
                         <img
                         src={logoText}
                         alt="Dev Stack"
-                        className="h-8 w-auto object-contain"
+                        className="h-7 lg:h-9 w-auto object-contain"
                         />
                     </a>
                 </div>
@@ -77,7 +77,7 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <div className="navbar-end gap-1 sm:gap-3">
+                <div className="navbar-end gap-1 ml-12 sm:gap-3">
                     <button className="btn btn-ghost text-gray-600 hover:bg-gray-100 hover:text-gray-900 font-medium px-2 sm:px-4 text-sm sm:text-base">
                         Sign In
                     </button>
