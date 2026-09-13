@@ -20,6 +20,7 @@ function App() {
     <Suspense fallback = {<h2>Loading....</h2>}>
       <Technologies technologyPromise = {technologyPromise}></Technologies>
     </Suspense>
+
     </>
   )
 }
