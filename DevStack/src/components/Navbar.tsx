@@ -1,28 +1,48 @@
 // import React from 'react';
 import hamburgerIcon from "../assets/hamburger.png";
-import logoText from "../assets/logo-text.png"
-
+import logoText from "../assets/logo-text.png";
 
 const Navbar = () => {
     
     const navLinks = (
         <>
-        <li>
-            <a className="text-[#E91E63] font-semibold hover:text-[#D81B60]">Home</a>
-        </li>
-        <li>
-            <a className="text-gray-600 hover:text-gray-900 font-medium">Technologies</a>
-        </li>
-        <li>
-            <a className="text-gray-600 hover:text-gray-900 font-medium">Projects</a>
-        </li>
-        <li>
-            <a className="text-gray-600 hover:text-gray-900 font-medium">About</a>
-        </li>
-        <li>
-            <a className="text-gray-600 hover:text-gray-900 font-medium">Contact</a>
-        </li>
+            <li>
+                <a className="text-[#E91E63] font-semibold hover:text-[#D81B60]">Home</a>
+            </li>
+            <li>
+                <a className="text-gray-600 hover:text-gray-900 font-medium">Technologies</a>
+            </li>
+            <li>
+                <a className="text-gray-600 hover:text-gray-900 font-medium">Projects</a>
+            </li>
+            <li>
+                <a className="text-gray-600 hover:text-gray-900 font-medium">About</a>
+            </li>
+            <li>
+                <a className="text-gray-600 hover:text-gray-900 font-medium">Contact</a>
+            </li>
         </>
+    );
+
+    const renderLogo = (
+        <a className="flex items-center cursor-pointer">
+            {logoText ? (
+                <img
+                    src={logoText}
+                    alt="Dev Stack"
+                    className="h-7 lg:h-9 w-auto object-contain"
+                />
+            ) : (
+                <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-500 via-pink-500 to-rose-400 flex items-center justify-center text-white font-bold text-xs shadow-xs">
+                        DS
+                    </div>
+                    <span className="text-xl font-bold text-gray-900 tracking-tight">
+                        Dev<span className="bg-brand-gradient bg-clip-text text-transparent">Stack</span>
+                    </span>
+                </div>
+            )}
+        </a>
     );
 
     return (
@@ -30,12 +50,11 @@ const Navbar = () => {
             <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <div className="navbar-start">
-                
                     <div className="dropdown lg:hidden">
                         <div
-                        tabIndex={0}
-                        role="button"
-                        className="btn btn-ghost btn-circle p-1"
+                            tabIndex={0}
+                            role="button"
+                            className="btn btn-ghost btn-circle p-1"
                         >
                             <img
                                 src={hamburgerIcon}
@@ -45,30 +64,20 @@ const Navbar = () => {
                         </div>
                         
                         <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow-lg border border-gray-100"
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow-lg border border-gray-100"
                         >
-                        {navLinks}
+                            {navLinks}
                         </ul>
                     </div>
                 
-                    <a className="hidden lg:flex items-center cursor-pointer">
-                        <img
-                        src={logoText}
-                        alt="Dev Stack"
-                        className="h-7 lg:h-9 w-auto object-contain"
-                        />
-                    </a>
+                    <div className="hidden lg:flex">
+                        {renderLogo}
+                    </div>
                 </div>
 
                 <div className="navbar-center lg:hidden">
-                    <a className="flex items-center cursor-pointer">
-                        <img
-                        src={logoText}
-                        alt="Dev Stack"
-                        className="h-7 lg:h-9 w-auto object-contain"
-                        />
-                    </a>
+                    {renderLogo}
                 </div>
 
                 <div className="navbar-center hidden lg:flex">

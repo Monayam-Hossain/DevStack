@@ -3,6 +3,7 @@ import Hero from "./components/Hero"
 import Technologies from "./components/technologies/Technologies";
 import { Suspense } from "react";
 import type { Itechnology } from "./types/technologyType";
+import Footer from "./components/Footer";
 
 const technologyFetch = async ():Promise<Itechnology[]> => {
   const res = await fetch ("../public/data.json");
@@ -20,7 +21,7 @@ function App() {
     <Suspense fallback = {<h2>Loading....</h2>}>
       <Technologies technologyPromise = {technologyPromise}></Technologies>
     </Suspense>
-
+    <Footer></Footer>
     </>
   )
 }
