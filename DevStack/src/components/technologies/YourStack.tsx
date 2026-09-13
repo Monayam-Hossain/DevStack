@@ -1,13 +1,13 @@
 import type { Itechnology } from "../../types/technologyType";
 
-interface Props {  
+interface IPropsYourStack {  
     selectedStack: Itechnology[];
     onRemove: (techId: Itechnology["id"]) => void;
     onRemoveAll: () => void;
 }
 
 
-const YourStack = ({ selectedStack, onRemove, onRemoveAll }: Props) => {
+const YourStack = ({ selectedStack, onRemove, onRemoveAll }: IPropsYourStack) => {
 
     const hasItems = selectedStack.length > 0;
 

@@ -1,13 +1,13 @@
 import { toast } from "react-toastify";
 import type { Itechnology } from "../../types/technologyType";
 
-interface Props {
+interface IPropsTechnologyCard {
     tech: Itechnology;
     onAdd: (tech: Itechnology) => void;
     isAdded: boolean;
 }
 
-const TechnologyCard = ({ tech, onAdd, isAdded }: Props) => {
+const TechnologyCard = ({ tech, onAdd, isAdded }: IPropsTechnologyCard) => {
     return (
         <div className="bg-white rounded-2xl border border-gray-100 p-5 flex flex-col justify-between shadow-xs hover:shadow-md transition-shadow duration-200">
             <div>
