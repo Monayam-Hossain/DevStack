@@ -2,6 +2,7 @@ import { use, useState } from "react";
 import type { Itechnology } from "../../types/technologyType";
 import TechnologyCard from "./TechnologyCard";
 import YourStack from "./YourStack";
+import { toast } from "react-toastify";
 
 interface TechProps {
     technologyPromise: Promise<Itechnology[]>;
@@ -15,15 +16,18 @@ const Technologies = ({ technologyPromise }: TechProps) => {
     const handleAddToStack = (tech: Itechnology) => {
         if (!selectedStack.some((item) => item.id === tech.id)) {
             setSelectedStack([...selectedStack, tech]);
+            toast.success(`${tech.name} added to your stack!`);
         }
     };
 
     const handleRemoveFromStack = (techId: Itechnology["id"]) => {
         setSelectedStack(selectedStack.filter((item) => item.id !== techId));
+        toast.warning(`${selectedStack.find((item) => item.id === techId)?.name} removed from your stack!`);
     };
 
     const handleRemoveAll = () => {
         setSelectedStack([]);
+        toast.warning("All technologies removed from your stack!");
     };
 
     return (
@@ -33,7 +37,7 @@ const Technologies = ({ technologyPromise }: TechProps) => {
                 <div className="mb-10">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
                         Explore the{" "}
-                        <span className="bg-gradient-to-r from-[#FF6B35] via-[#E91E63] to-[#8E24AA] bg-clip-text text-transparent">
+                        <span className="bg-brand-gradient bg-clip-text text-transparent">
                             Technologies
                         </span>
                     </h2>

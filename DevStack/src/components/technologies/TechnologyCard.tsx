@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import type { Itechnology } from "../../types/technologyType";
 
 interface Props {
@@ -45,7 +46,7 @@ const TechnologyCard = ({ tech, onAdd, isAdded }: Props) => {
                 <button
                   onClick={() => {
                     if (isAdded) {
-                      alert("try again");
+                      toast.error(`${tech.name} already added to your stack, try again!`);
                     } else {
                       onAdd(tech);
                     }
